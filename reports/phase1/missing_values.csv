@@ -1,0 +1,41 @@
+column,missing_cells
+Customer Lname,8
+Customer Zipcode,3
+Type,0
+Days for shipping (real),0
+Sales per customer,0
+Delivery Status,0
+Days for shipment (scheduled),0
+Benefit per order,0
+Category Id,0
+Late_delivery_risk,0
+Customer Country,0
+Category Name,0
+Customer Fname,0
+Customer Id,0
+Customer Segment,0
+Customer City,0
+Customer State,0
+Customer Street,0
+Department Id,0
+Department Name,0
+Latitude,0
+Longitude,0
+Market,0
+Order City,0
+Order Country,0
+Order Customer Id,0
+Order Item Discount,0
+Order Item Discount Rate,0
+Order Item Product Price,0
+Order Item Profit Ratio,0
+Order Item Quantity,0
+Sales,0
+Order Item Total,0
+Order Profit Per Order,0
+Order Region,0
+Order State,0
+Order Status,0
+Product Name,0
+Product Price,0
+Shipping Mode,0

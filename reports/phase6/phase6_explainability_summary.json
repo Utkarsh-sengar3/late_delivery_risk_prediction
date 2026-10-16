@@ -1,0 +1,86 @@
+{
+  "model": "RandomForest",
+  "threshold": 0.3789747461496299,
+  "validation_sample_size": 2000,
+  "baseline_f1": 0.7171717171717171,
+  "permutation_repeats": 3,
+  "scoring_metric": "F1 at locked Phase 5 threshold",
+  "top_features": [
+    {
+      "feature": "Type",
+      "mean_f1_drop": 0.01715644053296724,
+      "std": 0.0022569067875410726
+    },
+    {
+      "feature": "Shipping Mode",
+      "mean_f1_drop": 0.009429474953964881,
+      "std": 0.005520393091247755
+    },
+    {
+      "feature": "Order City",
+      "mean_f1_drop": 0.00866633924805608,
+      "std": 0.0015597984390592603
+    },
+    {
+      "feature": "Days for shipment (scheduled)",
+      "mean_f1_drop": 0.007530839072907969,
+      "std": 0.003576767606805809
+    },
+    {
+      "feature": "is_express_shipping",
+      "mean_f1_drop": 0.005818244765936102,
+      "std": 0.004678882732646436
+    },
+    {
+      "feature": "Order State",
+      "mean_f1_drop": 0.004715775943651468,
+      "std": 0.0033564598252481207
+    },
+    {
+      "feature": "shipping_pressure_index",
+      "mean_f1_drop": 0.00390668578281439,
+      "std": 0.004124033419642995
+    },
+    {
+      "feature": "Customer State",
+      "mean_f1_drop": 0.0038836147905523997,
+      "std": 0.0005348313823662853
+    },
+    {
+      "feature": "Latitude",
+      "mean_f1_drop": 0.0027541640095280298,
+      "std": 0.002248326261867795
+    },
+    {
+      "feature": "Category Id",
+      "mean_f1_drop": 0.002553762531664616,
+      "std": 0.0003370413927227481
+    },
+    {
+      "feature": "Customer Segment",
+      "mean_f1_drop": 0.00236824812400697,
+      "std": 0.0016308957870038374
+    },
+    {
+      "feature": "Order Region",
+      "mean_f1_drop": 0.0021484974203309637,
+      "std": 0.0013689527175064216
+    },
+    {
+      "feature": "Customer Country",
+      "mean_f1_drop": 0.0019809291834579357,
+      "std": 0.00040851694345903186
+    },
+    {
+      "feature": "discount_to_item_price_ratio",
+      "mean_f1_drop": 0.0017878183426805656,
+      "std": 0.0017772804831808133
+    },
+    {
+      "feature": "log_order_quantity",
+      "mean_f1_drop": 0.0013928077474273381,
+      "std": 0.0019135008008416075
+    }
+  ],
+  "interpretation_note": "Permutation importance measures predictive reliance under this validation sample; it does not establish causation."
+}

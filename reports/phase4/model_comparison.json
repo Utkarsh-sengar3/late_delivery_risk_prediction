@@ -1,0 +1,31 @@
+[
+  {
+    "model": "RandomForest",
+    "threshold": 0.5,
+    "validation_accuracy": 0.6954354088189675,
+    "validation_precision": 0.8175519630484989,
+    "validation_recall": 0.5722368155182865,
+    "validation_f1": 0.6732437893735885,
+    "validation_roc_auc": 0.7603456132831776,
+    "validation_average_precision": 0.8255095703239986,
+    "predicted_positive_rate": 0.3837801905606027,
+    "actual_positive_rate": 0.5483048969643253,
+    "warnings": [],
+    "representation": "Phase 2 sparse one-hot encoded features"
+  },
+  {
+    "model": "HistGradientBoosting_SVD",
+    "threshold": 0.5,
+    "validation_accuracy": 0.6968756924440506,
+    "validation_precision": 0.8427465152297368,
+    "validation_recall": 0.5497406883545497,
+    "validation_f1": 0.6654165987281917,
+    "validation_roc_auc": 0.7671597417083792,
+    "validation_average_precision": 0.8304066632160165,
+    "predicted_positive_rate": 0.3576704335623015,
+    "actual_positive_rate": 0.5483048969643253,
+    "warnings": [],
+    "representation": "TruncatedSVD projection (80 components); SVD fitted on train only",
+    "svd_explained_variance_ratio_sum": 0.9108783470256792
+  }
+]

@@ -1,0 +1,140 @@
+{
+  "target": "Late_delivery_risk",
+  "candidate_features": [
+    "Type",
+    "Days for shipment (scheduled)",
+    "Category Id",
+    "Category Name",
+    "Customer Country",
+    "Customer Segment",
+    "Customer State",
+    "Department Id",
+    "Department Name",
+    "Latitude",
+    "Longitude",
+    "Market",
+    "Order City",
+    "Order Country",
+    "Order Item Discount",
+    "Order Item Discount Rate",
+    "Order Item Product Price",
+    "Order Item Quantity",
+    "Order Region",
+    "Order State",
+    "Product Name",
+    "Product Price",
+    "Shipping Mode"
+  ],
+  "engineered_features": [
+    "shipping_pressure_index",
+    "is_express_shipping",
+    "discount_to_item_price_ratio",
+    "log_order_quantity"
+  ],
+  "rows_before_target_filter": 180519,
+  "rows_after_target_filter": 180519,
+  "rows_dropped_for_invalid_target": 0,
+  "input_features_after_engineering": [
+    "Type",
+    "Days for shipment (scheduled)",
+    "Category Id",
+    "Category Name",
+    "Customer Country",
+    "Customer Segment",
+    "Customer State",
+    "Department Id",
+    "Department Name",
+    "Latitude",
+    "Longitude",
+    "Market",
+    "Order City",
+    "Order Country",
+    "Order Item Discount",
+    "Order Item Discount Rate",
+    "Order Item Product Price",
+    "Order Item Quantity",
+    "Order Region",
+    "Order State",
+    "Product Name",
+    "Product Price",
+    "Shipping Mode",
+    "shipping_pressure_index",
+    "is_express_shipping",
+    "discount_to_item_price_ratio",
+    "log_order_quantity"
+  ],
+  "numeric_features": [
+    "Days for shipment (scheduled)",
+    "Category Id",
+    "Department Id",
+    "Latitude",
+    "Longitude",
+    "Order Item Discount",
+    "Order Item Discount Rate",
+    "Order Item Product Price",
+    "Order Item Quantity",
+    "Product Price",
+    "shipping_pressure_index",
+    "is_express_shipping",
+    "discount_to_item_price_ratio",
+    "log_order_quantity"
+  ],
+  "categorical_features": [
+    "Type",
+    "Category Name",
+    "Customer Country",
+    "Customer Segment",
+    "Customer State",
+    "Department Name",
+    "Market",
+    "Order City",
+    "Order Country",
+    "Order Region",
+    "Order State",
+    "Product Name",
+    "Shipping Mode"
+  ],
+  "split_fractions_approx": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "split_summary": {
+    "train": {
+      "rows": 126363,
+      "class_0": 57080,
+      "class_1": 69283,
+      "class_1_rate": 0.5482854949629242
+    },
+    "validation": {
+      "rows": 27078,
+      "class_0": 12231,
+      "class_1": 14847,
+      "class_1_rate": 0.5483048969643253
+    },
+    "test": {
+      "rows": 27078,
+      "class_0": 12231,
+      "class_1": 14847,
+      "class_1_rate": 0.5483048969643253
+    }
+  },
+  "transformed_shapes": {
+    "train": [
+      126363,
+      3505
+    ],
+    "validation": [
+      27078,
+      3505
+    ],
+    "test": [
+      27078,
+      3505
+    ]
+  },
+  "transformed_feature_count": 3505,
+  "preprocessing_fit_on": "train only",
+  "random_state": 42,
+  "note": "Random stratified split used because no trustworthy order timestamp was identified. Do not claim temporal generalization."
+}

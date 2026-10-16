@@ -1,0 +1,74 @@
+{
+  "selected_model": "RandomForest",
+  "model_selection_basis": "Phase 4 validation F1 at threshold 0.50",
+  "threshold_selection_metric": "validation F1",
+  "minimum_recall_constraint": null,
+  "selected_threshold": 0.3789747461496299,
+  "validation_at_default_threshold_0_5": {
+    "threshold": 0.5,
+    "accuracy": 0.6954354088189675,
+    "precision": 0.8175519630484989,
+    "recall": 0.5722368155182865,
+    "f1": 0.6732437893735885,
+    "roc_auc": 0.7603456132831776,
+    "average_precision": 0.8255095703239986,
+    "predicted_positive_rate": 0.3837801905606027,
+    "confusion_matrix": [
+      [
+        10335,
+        1896
+      ],
+      [
+        6351,
+        8496
+      ]
+    ]
+  },
+  "validation_at_selected_threshold": {
+    "threshold": 0.3789747461496299,
+    "accuracy": 0.6376763424181993,
+    "precision": 0.6237468055828582,
+    "recall": 0.8548528322219977,
+    "f1": 0.721238812331297,
+    "roc_auc": 0.7603456132831776,
+    "average_precision": 0.8255095703239986,
+    "predicted_positive_rate": 0.7514587487997636,
+    "confusion_matrix": [
+      [
+        4575,
+        7656
+      ],
+      [
+        2155,
+        12692
+      ]
+    ]
+  },
+  "held_out_test_at_selected_threshold": {
+    "threshold": 0.3789747461496299,
+    "accuracy": 0.6364576408892828,
+    "precision": 0.6232569598423257,
+    "recall": 0.851956624233852,
+    "f1": 0.7198793466507313,
+    "roc_auc": 0.7622482926262121,
+    "average_precision": 0.8276079905834006,
+    "predicted_positive_rate": 0.7495014402836251,
+    "confusion_matrix": [
+      [
+        4585,
+        7646
+      ],
+      [
+        2198,
+        12649
+      ]
+    ]
+  },
+  "test_used_for_model_or_threshold_selection": false,
+  "split_method": "random stratified split",
+  "limitations": [
+    "Random stratified split does not establish future-time generalization.",
+    "Threshold optimizes F1 on validation data and may not reflect business costs.",
+    "Candidate feature availability at prediction time must be verified."
+  ]
+}

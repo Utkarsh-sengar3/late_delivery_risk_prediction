@@ -1,0 +1,10 @@
+FIX FOR ImportError: cannot import name 'glass_card' from 'ui'
+
+1. Stop Streamlit in PowerShell with Ctrl+C.
+2. Back up your current ui.py (copy it to ui_backup.py).
+3. Copy this fixed ui.py into:
+   C:\\Users\\utkar\\OneDrive\\Desktop\\Late_Delivery_Risk\\late_delivery_risk_prediction\\ui.py
+   Replace the old ui.py file.
+4. Run: streamlit run app.py
+
+This fix provides glass_card plus the other helper functions imported by app.py.

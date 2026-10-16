@@ -1,0 +1,392 @@
+[
+  {
+    "sample_row": 1519,
+    "actual_label": 1,
+    "predicted_probability": 0.8830826365650253,
+    "predicted_label": 1,
+    "threshold": 0.3789747461496299,
+    "top_feature_sensitivity": [
+      {
+        "feature": "Shipping Mode",
+        "original_value": "First Class",
+        "typical_value": "Standard Class",
+        "probability_after_replacing_with_typical": 0.6377190048182347,
+        "probability_change_from_original": -0.24536363174679054
+      },
+      {
+        "feature": "Days for shipment (scheduled)",
+        "original_value": 1,
+        "typical_value": 4.0,
+        "probability_after_replacing_with_typical": 0.7866539477121445,
+        "probability_change_from_original": -0.0964286888528808
+      },
+      {
+        "feature": "shipping_pressure_index",
+        "original_value": 5.0,
+        "typical_value": 0.5,
+        "probability_after_replacing_with_typical": 0.7964642238451144,
+        "probability_change_from_original": -0.08661841271991089
+      },
+      {
+        "feature": "is_express_shipping",
+        "original_value": 1,
+        "typical_value": 0.0,
+        "probability_after_replacing_with_typical": 0.8257252962262865,
+        "probability_change_from_original": -0.05735734033873874
+      },
+      {
+        "feature": "Type",
+        "original_value": "PAYMENT",
+        "typical_value": "DEBIT",
+        "probability_after_replacing_with_typical": 0.8551064372416216,
+        "probability_change_from_original": -0.027976199323403672
+      },
+      {
+        "feature": "Order State",
+        "original_value": "Uttarakhand",
+        "typical_value": "Inglaterra",
+        "probability_after_replacing_with_typical": 0.8666298348766669,
+        "probability_change_from_original": -0.016452801688358387
+      },
+      {
+        "feature": "Order City",
+        "original_value": "Dehra Dun",
+        "typical_value": "Los Angeles",
+        "probability_after_replacing_with_typical": 0.8789774834438888,
+        "probability_change_from_original": -0.004105153121136462
+      },
+      {
+        "feature": "Order Country",
+        "original_value": "India",
+        "typical_value": "Estados Unidos",
+        "probability_after_replacing_with_typical": 0.8806702113697795,
+        "probability_change_from_original": -0.00241242519524576
+      }
+    ]
+  },
+  {
+    "sample_row": 169,
+    "actual_label": 1,
+    "predicted_probability": 0.8795579660690129,
+    "predicted_label": 1,
+    "threshold": 0.3789747461496299,
+    "top_feature_sensitivity": [
+      {
+        "feature": "Shipping Mode",
+        "original_value": "First Class",
+        "typical_value": "Standard Class",
+        "probability_after_replacing_with_typical": 0.6464280914508935,
+        "probability_change_from_original": -0.2331298746181194
+      },
+      {
+        "feature": "shipping_pressure_index",
+        "original_value": 3.0,
+        "typical_value": 0.5,
+        "probability_after_replacing_with_typical": 0.7805035224178758,
+        "probability_change_from_original": -0.09905444365113714
+      },
+      {
+        "feature": "Days for shipment (scheduled)",
+        "original_value": 1,
+        "typical_value": 4.0,
+        "probability_after_replacing_with_typical": 0.7900055378719267,
+        "probability_change_from_original": -0.0895524281970862
+      },
+      {
+        "feature": "is_express_shipping",
+        "original_value": 1,
+        "typical_value": 0.0,
+        "probability_after_replacing_with_typical": 0.8249367289812459,
+        "probability_change_from_original": -0.054621237087767005
+      },
+      {
+        "feature": "Type",
+        "original_value": "PAYMENT",
+        "typical_value": "DEBIT",
+        "probability_after_replacing_with_typical": 0.8592571884501328,
+        "probability_change_from_original": -0.02030077761888016
+      },
+      {
+        "feature": "Order City",
+        "original_value": "Gujranwala",
+        "typical_value": "Los Angeles",
+        "probability_after_replacing_with_typical": 0.8683910661404733,
+        "probability_change_from_original": -0.011166899928539586
+      },
+      {
+        "feature": "Order State",
+        "original_value": "Punyab",
+        "typical_value": "Inglaterra",
+        "probability_after_replacing_with_typical": 0.8766803412300205,
+        "probability_change_from_original": -0.002877624838992454
+      },
+      {
+        "feature": "Order Country",
+        "original_value": "Pakistán",
+        "typical_value": "Estados Unidos",
+        "probability_after_replacing_with_typical": 0.8782480138609766,
+        "probability_change_from_original": -0.0013099522080363135
+      }
+    ]
+  },
+  {
+    "sample_row": 788,
+    "actual_label": 1,
+    "predicted_probability": 0.8753059772821017,
+    "predicted_label": 1,
+    "threshold": 0.3789747461496299,
+    "top_feature_sensitivity": [
+      {
+        "feature": "Shipping Mode",
+        "original_value": "First Class",
+        "typical_value": "Standard Class",
+        "probability_after_replacing_with_typical": 0.6217228426015787,
+        "probability_change_from_original": -0.25358313468052296
+      },
+      {
+        "feature": "Days for shipment (scheduled)",
+        "original_value": 1,
+        "typical_value": 4.0,
+        "probability_after_replacing_with_typical": 0.7743610222180026,
+        "probability_change_from_original": -0.10094495506409906
+      },
+      {
+        "feature": "shipping_pressure_index",
+        "original_value": 5.0,
+        "typical_value": 0.5,
+        "probability_after_replacing_with_typical": 0.7780182890856888,
+        "probability_change_from_original": -0.09728768819641287
+      },
+      {
+        "feature": "is_express_shipping",
+        "original_value": 1,
+        "typical_value": 0.0,
+        "probability_after_replacing_with_typical": 0.8205960837019771,
+        "probability_change_from_original": -0.05470989358012457
+      },
+      {
+        "feature": "Type",
+        "original_value": "PAYMENT",
+        "typical_value": "DEBIT",
+        "probability_after_replacing_with_typical": 0.8544940160190091,
+        "probability_change_from_original": -0.020811961263092593
+      },
+      {
+        "feature": "Order State",
+        "original_value": "Isla de Francia",
+        "typical_value": "Inglaterra",
+        "probability_after_replacing_with_typical": 0.8672450779016028,
+        "probability_change_from_original": -0.00806089938049892
+      },
+      {
+        "feature": "Department Name",
+        "original_value": "Golf",
+        "typical_value": "Fan Shop",
+        "probability_after_replacing_with_typical": 0.8702201092791786,
+        "probability_change_from_original": -0.0050858680029231
+      },
+      {
+        "feature": "Order Region",
+        "original_value": "Western Europe",
+        "typical_value": "Central America",
+        "probability_after_replacing_with_typical": 0.8712128640073789,
+        "probability_change_from_original": -0.004093113274722837
+      }
+    ]
+  },
+  {
+    "sample_row": 341,
+    "actual_label": 0,
+    "predicted_probability": 0.32442593139055725,
+    "predicted_label": 0,
+    "threshold": 0.3789747461496299,
+    "top_feature_sensitivity": [
+      {
+        "feature": "Order State",
+        "original_value": "Matanzas",
+        "typical_value": "Inglaterra",
+        "probability_after_replacing_with_typical": 0.35446562932391334,
+        "probability_change_from_original": 0.03003969793335609
+      },
+      {
+        "feature": "Type",
+        "original_value": "TRANSFER",
+        "typical_value": "DEBIT",
+        "probability_after_replacing_with_typical": 0.3421747838406139,
+        "probability_change_from_original": 0.01774885245005664
+      },
+      {
+        "feature": "Order Country",
+        "original_value": "Cuba",
+        "typical_value": "Estados Unidos",
+        "probability_after_replacing_with_typical": 0.3306581037728313,
+        "probability_change_from_original": 0.006232172382274026
+      },
+      {
+        "feature": "Category Name",
+        "original_value": "Women's Apparel",
+        "typical_value": "Cleats",
+        "probability_after_replacing_with_typical": 0.32948336936293177,
+        "probability_change_from_original": 0.005057437972374512
+      },
+      {
+        "feature": "Order Region",
+        "original_value": "Caribbean",
+        "typical_value": "Central America",
+        "probability_after_replacing_with_typical": 0.32859627605898817,
+        "probability_change_from_original": 0.004170344668430914
+      },
+      {
+        "feature": "Order Item Discount",
+        "original_value": 2.0,
+        "typical_value": 14.0,
+        "probability_after_replacing_with_typical": 0.32117430846855677,
+        "probability_change_from_original": -0.0032516229220004855
+      },
+      {
+        "feature": "Department Name",
+        "original_value": "Golf",
+        "typical_value": "Fan Shop",
+        "probability_after_replacing_with_typical": 0.32712677379531846,
+        "probability_change_from_original": 0.0027008424047612056
+      },
+      {
+        "feature": "Customer Segment",
+        "original_value": "Corporate",
+        "typical_value": "Consumer",
+        "probability_after_replacing_with_typical": 0.3261738755611772,
+        "probability_change_from_original": 0.0017479441706199639
+      }
+    ]
+  },
+  {
+    "sample_row": 1813,
+    "actual_label": 0,
+    "predicted_probability": 0.32658146396715715,
+    "predicted_label": 0,
+    "threshold": 0.3789747461496299,
+    "top_feature_sensitivity": [
+      {
+        "feature": "Order City",
+        "original_value": "Chelles",
+        "typical_value": "Los Angeles",
+        "probability_after_replacing_with_typical": 0.3514795157761928,
+        "probability_change_from_original": 0.02489805180903565
+      },
+      {
+        "feature": "Type",
+        "original_value": "TRANSFER",
+        "typical_value": "DEBIT",
+        "probability_after_replacing_with_typical": 0.35124966615723086,
+        "probability_change_from_original": 0.024668202190073707
+      },
+      {
+        "feature": "discount_to_item_price_ratio",
+        "original_value": 0.6499416569428238,
+        "typical_value": 0.1400233372228704,
+        "probability_after_replacing_with_typical": 0.33132505558486625,
+        "probability_change_from_original": 0.0047435916177090975
+      },
+      {
+        "feature": "Order Item Quantity",
+        "original_value": 5,
+        "typical_value": 1.0,
+        "probability_after_replacing_with_typical": 0.32893024139384847,
+        "probability_change_from_original": 0.0023487774266913175
+      },
+      {
+        "feature": "Order Region",
+        "original_value": "Western Europe",
+        "typical_value": "Central America",
+        "probability_after_replacing_with_typical": 0.32842431757186497,
+        "probability_change_from_original": 0.001842853604707817
+      },
+      {
+        "feature": "Order State",
+        "original_value": "Isla de Francia",
+        "typical_value": "Inglaterra",
+        "probability_after_replacing_with_typical": 0.32813836194371987,
+        "probability_change_from_original": 0.0015568979765627211
+      },
+      {
+        "feature": "Department Name",
+        "original_value": "Apparel",
+        "typical_value": "Fan Shop",
+        "probability_after_replacing_with_typical": 0.32549606164733996,
+        "probability_change_from_original": -0.0010854023198171858
+      },
+      {
+        "feature": "Customer Segment",
+        "original_value": "Corporate",
+        "typical_value": "Consumer",
+        "probability_after_replacing_with_typical": 0.3262359345700633,
+        "probability_change_from_original": -0.0003455293970938689
+      }
+    ]
+  },
+  {
+    "sample_row": 12,
+    "actual_label": 0,
+    "predicted_probability": 0.33127055270334316,
+    "predicted_label": 0,
+    "threshold": 0.3789747461496299,
+    "top_feature_sensitivity": [
+      {
+        "feature": "Type",
+        "original_value": "TRANSFER",
+        "typical_value": "DEBIT",
+        "probability_after_replacing_with_typical": 0.35119440459758616,
+        "probability_change_from_original": 0.019923851894243005
+      },
+      {
+        "feature": "Order City",
+        "original_value": "Pekín",
+        "typical_value": "Los Angeles",
+        "probability_after_replacing_with_typical": 0.35063369957203677,
+        "probability_change_from_original": 0.019363146868693615
+      },
+      {
+        "feature": "Order State",
+        "original_value": "Pekín",
+        "typical_value": "Inglaterra",
+        "probability_after_replacing_with_typical": 0.33937218432241284,
+        "probability_change_from_original": 0.008101631619069682
+      },
+      {
+        "feature": "Order Item Discount",
+        "original_value": 2.5,
+        "typical_value": 14.0,
+        "probability_after_replacing_with_typical": 0.33407172111869876,
+        "probability_change_from_original": 0.002801168415355604
+      },
+      {
+        "feature": "shipping_pressure_index",
+        "original_value": 0.25,
+        "typical_value": 0.5,
+        "probability_after_replacing_with_typical": 0.3333062659172471,
+        "probability_change_from_original": 0.0020357132139039447
+      },
+      {
+        "feature": "Customer State",
+        "original_value": "CA",
+        "typical_value": "PR",
+        "probability_after_replacing_with_typical": 0.3328441431128148,
+        "probability_change_from_original": 0.0015735904094716369
+      },
+      {
+        "feature": "Customer Segment",
+        "original_value": "Corporate",
+        "typical_value": "Consumer",
+        "probability_after_replacing_with_typical": 0.3326620894384001,
+        "probability_change_from_original": 0.0013915367350569308
+      },
+      {
+        "feature": "Order Region",
+        "original_value": "Eastern Asia",
+        "typical_value": "Central America",
+        "probability_after_replacing_with_typical": 0.3325737836201721,
+        "probability_change_from_original": 0.0013032309168289347
+      }
+    ]
+  }
+]
