@@ -49,6 +49,7 @@ def inject_css(mode="Dark", accent="#7C5CFC", density="Comfortable"):
     .badge{{padding:5px 9px;border-radius:99px;font-size:.67rem;font-weight:800;}}
     .badge-success{{color:#10b981;background:#10b98118;border:1px solid #10b98144;}}
     .badge-warning{{color:#f59e0b;background:#f59e0b18;border:1px solid #f59e0b44;}}
+    .badge-danger{{color:#ef4444;background:#ef444418;border:1px solid #ef444444;}}
     .badge-info{{color:#60a5fa;background:#60a5fa18;border:1px solid #60a5fa44;}}
     .empty-state{{border:1px dashed var(--border);border-radius:20px;text-align:center;padding:48px 20px;background:var(--panel);}}
     .empty-icon{{font-size:2rem;color:var(--accent);}}
@@ -91,6 +92,7 @@ def project_root():
     candidates = [p, p.parent, p.parent.parent]
     return next((c for c in candidates if (c / "data" / "raw" / "APL_Logistics.csv").exists()), p)
 
+@st.cache_data(show_spinner=False)
 def load_project_data():
     root = project_root()
     candidates = [root / "data" / "raw" / "APL_Logistics.csv", root / "APL_Logistics.csv", root / "data" / "APL_Logistics.csv"]
@@ -102,6 +104,7 @@ def load_project_data():
                 return None
     return None
 
+@st.cache_data(show_spinner=False)
 def load_model_metrics():
     root = project_root()
     candidates = list(root.glob("reports/**/*phase5*.json")) + list(root.glob("reports/**/*metrics*.json")) + list(root.glob("artifacts/phase5/*metrics*.json"))
@@ -122,6 +125,7 @@ def load_model_metrics():
             continue
     return {"accuracy":0.6365,"precision":0.6233,"recall":0.8520,"f1":0.7199,"roc_auc":0.7622,"average_precision":0.8276}
 
+@st.cache_data(show_spinner=False)
 def load_feature_importance():
     root = project_root()
     candidates = list(root.glob("reports/phase6/**/*importance*.csv")) + list(root.glob("reports/**/*permutation*.csv")) + list(root.glob("reports/**/*importance*.csv"))
@@ -136,3 +140,12 @@ def load_feature_importance():
         except Exception:
             continue
     return pd.DataFrame([("Type",0.017156),("Shipping Mode",0.009429),("Order City",0.008666),("Scheduled shipping days",0.007531),("Express shipping",0.005818),("Order State",0.004716),("Shipping pressure index",0.003907),("Customer State",0.003884),("Latitude",0.002754),("Category Id",0.002554)], columns=["feature","importance"])
+
+@st.cache_resource(show_spinner="Loading Phase 5 ML model adapter...")
+def load_model_adapter():
+    """Load and cache the trained Phase 5 Random Forest model adapter."""
+    try:
+        from src.models import Phase5ModelAdapter
+        return Phase5ModelAdapter.load()
+    except Exception as exc:
+        return None
