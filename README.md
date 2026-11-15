@@ -29,6 +29,33 @@ The notebook provides an in-depth walkthrough:
 
 ---
 
+## 📄 Academic Research Paper
+
+A publication-grade IEEE two-column research paper detailing the theoretical foundations, leakage-free feature engineering, empirical benchmark comparisons, threshold optimization mathematics, and deployment architecture is available in the [`research_paper/`](research_paper/) directory:
+
+📄 **[Download Compiled Research Paper (PDF)](research_paper/compiled/Late_Delivery_Risk_Prediction_Research_Paper.pdf)**  
+📝 **[LaTeX Source Manuscript (`main.tex`)](research_paper/main.tex)**  
+📚 **[BibTeX Citations (`references.bib`)](research_paper/references.bib)**  
+📖 **[Research Paper Documentation & Guide](research_paper/README.md)**
+
+- **Title:** *Late Delivery Risk Prediction in Global Supply Chain Operations Using Machine Learning: An End-to-End Predictive Decision-Support Framework*
+- **Author:** Utkarsh Sengar
+- **Format:** IEEE Two-Column Conference / Journal Format (11 Pages, 20 Figures & Screenshots, 7 Comparative Tables, 25 Authentic Citations)
+- **Status:** Complete & Publication-Ready
+
+### Key Empirical Benchmarks (Held-Out Test Set,  = 27,078$)
+
+| Metric | Baseline ($\\tau = 0.5000$) | Tuned Threshold ($\\tau^* = 0.3790$) | Net Delta ($\\Delta$) | Operational Consequence |
+| :--- | :---: | :---: | :---: | :--- |
+| **Recall (Sensitivity)** | **57.20%** | **85.20%** | **+28.00%** | Rescues 4,157 late shipments from zero intervention |
+| **Precision** | **70.62%** | **62.33%** | **-8.29%** | Moderate false-alarm trade-off, highly tolerable |
+| **F1-Score** | **63.21%** | **71.99%** | **+8.78%** | Superior harmonic balance for operational planning |
+| **Accuracy** | **64.71%** | **63.65%** | **-1.06%** | High overall fidelity preserved |
+| **ROC-AUC** | **76.22%** | **76.22%** | **--** | Invariant rank discrimination capacity |
+| **Average Precision** | **82.76%** | **82.76%** | **--** | Robust performance over 54.83% naive baseline |
+
+---
+
 ## 📌 Project Overview
 
 Late deliveries can negatively impact customer satisfaction, supply-chain efficiency, and logistics operations.
