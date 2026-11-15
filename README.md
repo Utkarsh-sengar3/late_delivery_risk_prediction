@@ -1,4 +1,4 @@
-# # 🚚 Late Delivery Risk Prediction
+# 🚚 Late Delivery Risk Prediction
 
 An end-to-end Machine Learning project designed to predict late-delivery risk using logistics and order-related data. The project combines data preprocessing, model evaluation, threshold optimization, and explainability through an interactive Streamlit web application.
 
@@ -7,6 +7,25 @@ An end-to-end Machine Learning project designed to predict late-delivery risk us
 🚀 **Try the application here:**
 
 ### 👉 https://ldr-utkarsh-sengar.streamlit.app/
+
+---
+
+## 📓 Machine Learning Notebook
+
+A complete, educational, and reproducible Jupyter Notebook detailing the entire Machine Learning implementation is available in the [`notebooks/`](notebooks/) directory:
+
+👉 **[`notebooks/late_delivery_risk_prediction_ML.ipynb`](notebooks/late_delivery_risk_prediction_ML.ipynb)**  
+📖 **[Notebook Guide & Documentation](notebooks/README.md)**
+
+The notebook provides an in-depth walkthrough:
+- **Dataset Understanding & EDA:** Target distribution, shipping mode failure rates, and transit window constraints across 180,519 records.
+- **Data Leakage Safeguards:** Audit of post-shipment columns (`Days for shipping (real)`, `Delivery Status`, `Order Status`) and formulation of the 23 raw pre-shipment feature schema.
+- **Feature Engineering:** Implementation of `shipping_pressure_index`, `is_express_shipping`, `discount_to_item_price_ratio`, and `log_order_quantity`.
+- **Model Comparison:** Benchmark comparison of Logistic Regression (baseline), HistGradientBoosting + TruncatedSVD, and Random Forest.
+- **Decision Threshold Optimization:** Cost-asymmetric tuning on validation data ($\tau^* = 0.3790$) increasing delay recall from 57.2% to 85.5%.
+- **Held-Out Test Results:** Single locked evaluation on 27,078 test instances (Accuracy: 63.65%, Recall: 85.20%, F1: 71.99%, ROC-AUC: 0.7622).
+- **Model Explainability:** Permutation feature importance ranking predictive reliance across features (`Type`, `Shipping Mode`, `Order City`, scheduled days).
+- **Production Inference:** Direct integration with `Phase5ModelAdapter` for live single-order and batch predictions with local sensitivity explanations.
 
 ---
 
@@ -119,3 +138,4 @@ The decision threshold was selected using validation data, while the test set wa
 
 ```bash
 git clone https://github.com/Utkarsh-sengar3/late_delivery_risk_prediction.git
+```
