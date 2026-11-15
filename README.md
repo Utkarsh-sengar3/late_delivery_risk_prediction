@@ -138,4 +138,68 @@ The decision threshold was selected using validation data, while the test set wa
 
 ```bash
 git clone https://github.com/Utkarsh-sengar3/late_delivery_risk_prediction.git
+cd late_delivery_risk_prediction
 ```
+
+### 2. Set Up Python Environment
+
+Recommended Python version: **Python 3.10 or 3.11**.
+
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# Windows:
+.\venv\Scripts\activate
+# Linux/macOS:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### 3. Model Artifacts & Cross-Version Compatibility
+
+The production model bundle is tracked in Git and ready for inference:
+- **`artifacts/phase5/selected_model_bundle.joblib`**: Full pipeline bundle containing:
+  - `model`: Tuned Random Forest Classifier (120 estimators, max depth 22, balanced subsampling).
+  - `preprocessor`: 2-branch `ColumnTransformer` (median + standard scaler for numeric features; most-frequent + one-hot encoding for categorical features).
+  - `threshold`: Cost-asymmetric decision threshold (`0.3790`).
+  - Cross-version compatibility: Preprocessor imputers are dual-compatible with scikit-learn 1.4–1.6 (`_fill_dtype`) and scikit-learn 1.7+ (`_fit_dtype`).
+
+### 4. Run the Streamlit Application
+
+```bash
+streamlit run app.py
+```
+
+Open your browser at `http://localhost:8501`.
+
+### 5. Prediction Workflow
+
+1. **Single Shipment Assessment**:
+   - Navigate to **Model Prediction** in the sidebar.
+   - Enter pre-dispatch shipment details (Scheduled Days, Shipping Mode, Item Price, Quantity, Market, Destination).
+   - Click **Predict Late Delivery Risk** to receive the calibrated probability, risk badge, and sensitivity-based feature explanations.
+2. **Batch CSV Scoring**:
+   - Switch to the **Batch Prediction (CSV)** tab.
+   - Upload any logistics CSV manifest. The system automatically filters out leakage columns, scores all rows via vectorized batch inference, and provides a downloadable scored CSV report.
+
+### 6. Run Automated Tests
+
+The repository includes a comprehensive pytest suite covering model loading, leakage enforcement, feature engineering, prediction contracts, imputer cross-version auto-healing, and Streamlit page flows:
+
+```bash
+pytest
+```
+
+---
+
+## ☁️ Deployment
+
+The application is deployed on **Streamlit Community Cloud**:
+- URL: **https://ldr-utkarsh-sengar.streamlit.app/**
+- Production branch: `main`
+- Configuration: Streamlit automatically installs dependencies from `requirements.txt`.
+

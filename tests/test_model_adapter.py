@@ -104,3 +104,75 @@ def test_batch_prediction(adapter):
     assert "predicted_late_probability" in scored.columns
     assert "predicted_late_risk" in scored.columns
     assert "risk_decision" in scored.columns
+
+
+def test_simple_imputer_cross_version_compatibility(adapter):
+    """Verify that all SimpleImputer instances have both _fill_dtype and _fit_dtype populated."""
+    imputers_found = 0
+    for _, trans, _ in adapter.preprocessor.transformers_:
+        if hasattr(trans, "steps"):
+            for _, step in trans.steps:
+                if type(step).__name__ == "SimpleImputer":
+                    imputers_found += 1
+                    assert hasattr(step, "_fill_dtype"), "SimpleImputer must have _fill_dtype for sklearn 1.4-1.6"
+                    assert hasattr(step, "_fit_dtype"), "SimpleImputer must have _fit_dtype for sklearn 1.7+"
+                    assert step._fill_dtype is not None
+                    assert step._fit_dtype is not None
+    assert imputers_found >= 2, f"Expected at least 2 SimpleImputers, found {imputers_found}"
+
+
+def test_imputer_auto_healing(adapter):
+    """Simulate missing _fill_dtype or _fit_dtype and verify auto-healing mechanism."""
+    from src.models import ensure_imputer_compatibility
+
+    # Temporarily remove attribute to test auto-healing
+    for _, trans, _ in adapter.preprocessor.transformers_:
+        if hasattr(trans, "steps"):
+            for _, step in trans.steps:
+                if type(step).__name__ == "SimpleImputer":
+                    if hasattr(step, "_fill_dtype"):
+                        delattr(step, "_fill_dtype")
+                    assert not hasattr(step, "_fill_dtype")
+
+    # Call healing function
+    ensure_imputer_compatibility(adapter.preprocessor)
+
+    # Verify both attributes are re-attached
+    for _, trans, _ in adapter.preprocessor.transformers_:
+        if hasattr(trans, "steps"):
+            for _, step in trans.steps:
+                if type(step).__name__ == "SimpleImputer":
+                    assert hasattr(step, "_fill_dtype")
+                    assert hasattr(step, "_fit_dtype")
+
+    # Verify transform succeeds without exception
+    sample = {"Shipping Mode": "Standard Class", "Days for shipment (scheduled)": 4}
+    res = adapter.predict_single(sample)
+    assert "probability" in res
+
+
+def test_data_validation_robustness(adapter):
+    """Test handling of missing, unknown categorical, and unexpected extra columns."""
+    # 1. Missing values and unexpected columns
+    noisy_sample = {
+        "Shipping Mode": "Standard Class",
+        "Days for shipment (scheduled)": None,
+        "Order Item Quantity": np.nan,
+        "Unexpected_Column_XYZ": "Ignore me",
+        "Market": "UNKNOWN_NEW_MARKET_2026",
+        "Order Country": "NON_EXISTENT_COUNTRY_99",
+    }
+    res = adapter.predict_single(noisy_sample)
+    assert 0.0 <= res["probability"] <= 1.0
+    assert res["risk_tier"] in ["Low Risk", "Moderate / Monitored", "High Risk", "Critical Risk"]
+
+    # 2. Batch with diverse edge cases
+    batch_data = pd.DataFrame([
+        {"Shipping Mode": "First Class", "Days for shipment (scheduled)": 1, "Order Item Quantity": 1},
+        {"Shipping Mode": "Standard Class", "Days for shipment (scheduled)": 4, "Order Item Quantity": 5},
+        {"Shipping Mode": "UNKNOWN", "Days for shipment (scheduled)": 2, "Order Item Quantity": 2},
+    ])
+    scored = adapter.batch_predict(batch_data)
+    assert len(scored) == 3
+    assert scored["predicted_late_probability"].between(0.0, 1.0).all()
+    assert set(scored["predicted_late_risk"].unique()).issubset({0, 1})

@@ -318,7 +318,9 @@ elif page == "Model Prediction":
                     st.session_state.history.insert(0, history_entry)
 
                 except Exception as exc:
-                    st.error(f"Prediction failed: {exc}")
+                    import logging
+                    logging.getLogger("deliveryiq.app").error(f"Single prediction failed: {exc}", exc_info=True)
+                    st.error(f"⚠️ Assessment could not be completed: {type(exc).__name__} — {exc}")
 
         with tab_batch:
             section_header("Batch CSV assessment", "Upload and score shipments in bulk")
@@ -385,7 +387,9 @@ elif page == "Model Prediction":
                                 use_container_width=True,
                             )
                 except Exception as exc:
-                    st.error(f"Error processing CSV: {exc}")
+                    import logging
+                    logging.getLogger("deliveryiq.app").error(f"Error processing batch CSV: {exc}", exc_info=True)
+                    st.error(f"⚠️ Batch processing error: {type(exc).__name__} — {exc}")
 
 # ----------------- Prediction Analytics -----------------
 elif page == "Prediction Analytics":

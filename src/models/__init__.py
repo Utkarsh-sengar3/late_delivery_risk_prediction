@@ -6,6 +6,7 @@ from src.models.model_adapter import (
     DEFAULT_BUNDLE_PATH,
     LEAKAGE_COLUMNS,
     TYPICAL_VALUES,
+    ensure_imputer_compatibility,
 )
 
 __all__ = [
@@ -14,4 +15,5 @@ __all__ = [
     "DEFAULT_BUNDLE_PATH",
     "LEAKAGE_COLUMNS",
     "TYPICAL_VALUES",
+    "ensure_imputer_compatibility",
 ]

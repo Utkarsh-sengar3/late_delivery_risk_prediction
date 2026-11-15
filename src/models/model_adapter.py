@@ -80,6 +80,36 @@ TYPICAL_VALUES: Dict[str, Any] = {
 }
 
 
+def ensure_imputer_compatibility(estimator: Any) -> None:
+    """Ensure SimpleImputer compatibility across scikit-learn versions (<=1.3, 1.4-1.6, and 1.7+).
+    
+    In scikit-learn 1.4.0 through 1.6.x, SimpleImputer.transform requires self._fill_dtype.
+    In scikit-learn 1.7.0+, it requires self._fit_dtype.
+    This helper recursively traverses ColumnTransformer, Pipeline, and FeatureUnion
+    to ensure both attributes are populated on every SimpleImputer instance.
+    """
+    if estimator is None:
+        return
+    if hasattr(estimator, "transformers_"):
+        for item in estimator.transformers_:
+            if len(item) >= 2:
+                ensure_imputer_compatibility(item[1])
+    if hasattr(estimator, "steps"):
+        for _, step in estimator.steps:
+            ensure_imputer_compatibility(step)
+    if type(estimator).__name__ == "SimpleImputer":
+        target_dtype = getattr(estimator, "_fill_dtype", None)
+        if target_dtype is None:
+            target_dtype = getattr(estimator, "_fit_dtype", None)
+        if target_dtype is None and hasattr(estimator, "statistics_") and estimator.statistics_ is not None:
+            target_dtype = getattr(estimator.statistics_, "dtype", None)
+        if target_dtype is not None:
+            if not hasattr(estimator, "_fill_dtype") or getattr(estimator, "_fill_dtype", None) is None:
+                object.__setattr__(estimator, "_fill_dtype", target_dtype)
+            if not hasattr(estimator, "_fit_dtype") or getattr(estimator, "_fit_dtype", None) is None:
+                object.__setattr__(estimator, "_fit_dtype", target_dtype)
+
+
 class Phase5ModelAdapter:
     """Production inference adapter for the Phase 5 Random Forest model bundle."""
 
@@ -94,6 +124,9 @@ class Phase5ModelAdapter:
         self.preprocessor = preprocessor
         self.threshold = float(threshold)
         self.metadata = metadata or {}
+
+        # Guarantee cross-version scikit-learn imputer compatibility
+        ensure_imputer_compatibility(self.preprocessor)
 
         # Cache expected preprocessor feature schema
         if hasattr(preprocessor, "feature_names_in_"):
@@ -211,6 +244,7 @@ class Phase5ModelAdapter:
     def predict_proba(self, X: Union[pd.DataFrame, Dict[str, Any], List[Dict[str, Any]]]) -> np.ndarray:
         """Compute the estimated probability of late delivery (class 1)."""
         df_prepared = self.prepare_features(X)
+        ensure_imputer_compatibility(self.preprocessor)
         X_trans = self.preprocessor.transform(df_prepared)
 
         if hasattr(self.model, "predict_proba"):
@@ -281,6 +315,7 @@ class Phase5ModelAdapter:
                 perturbed["discount_to_item_price_ratio"] = (disc / price) if price > 0 else 0.0
                 perturbed["log_order_quantity"] = float(np.log1p(max(0, qty)))
 
+            ensure_imputer_compatibility(self.preprocessor)
             p_trans = self.preprocessor.transform(perturbed)
             p_new = float(self.model.predict_proba(p_trans)[0, 1])
             diff = base_probability - p_new  # positive means original value increased risk

@@ -148,4 +148,6 @@ def load_model_adapter():
         from src.models import Phase5ModelAdapter
         return Phase5ModelAdapter.load()
     except Exception as exc:
+        import logging
+        logging.getLogger("deliveryiq.ui").error(f"Failed to load Phase 5 model adapter: {exc}", exc_info=True)
         return None
