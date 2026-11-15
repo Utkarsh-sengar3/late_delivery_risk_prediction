@@ -556,8 +556,16 @@ elif page == "About Developer":
     st.markdown("""
     <div class="developer-card">
       <div class="developer-avatar">US</div>
-      <div><div class="eyebrow">MACHINE LEARNING / DATA APPLICATIONS</div><h2>Utkarsh Sengar</h2>
-      <p>AI/ML Engineering student building applied machine-learning projects with a focus on practical evaluation, explainability, and usable interfaces.</p></div>
+      <div>
+        <div class="eyebrow">MACHINE LEARNING / DATA APPLICATIONS</div>
+        <h2>Utkarsh Sengar</h2>
+        <div style="margin: 10px 0 14px 0; font-size: 0.95rem; line-height: 1.8;">
+          <div><strong>GitHub:</strong> <a href="https://github.com/Utkarsh-sengar3" target="_blank" style="color: var(--accent); text-decoration: none;">https://github.com/Utkarsh-sengar3</a></div>
+          <div><strong>Project:</strong> <a href="https://github.com/Utkarsh-sengar3/late_delivery_risk_prediction" target="_blank" style="color: var(--accent); text-decoration: none;">https://github.com/Utkarsh-sengar3/late_delivery_risk_prediction</a></div>
+          <div><strong>Email:</strong> <a href="mailto:utkarshsengar3@gmail.com" style="color: var(--accent); text-decoration: none;">utkarshsengar3@gmail.com</a></div>
+        </div>
+        <p>AI/ML Engineering student building applied machine-learning projects with a focus on practical evaluation, explainability, and usable interfaces.</p>
+      </div>
     </div>
     """, unsafe_allow_html=True)
 

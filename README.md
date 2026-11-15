@@ -2,6 +2,16 @@
 
 An end-to-end Machine Learning project designed to predict late-delivery risk using logistics and order-related data. The project combines data preprocessing, model evaluation, threshold optimization, and explainability through an interactive Streamlit web application.
 
+---
+
+### 👤 Developer & Author
+**Utkarsh Sengar**  
+- **GitHub:** [https://github.com/Utkarsh-sengar3](https://github.com/Utkarsh-sengar3)  
+- **Project:** [https://github.com/Utkarsh-sengar3/late_delivery_risk_prediction](https://github.com/Utkarsh-sengar3/late_delivery_risk_prediction)  
+- **Email:** [utkarshsengar3@gmail.com](mailto:utkarshsengar3@gmail.com)
+
+---
+
 ## 🌐 Live Website
 
 🚀 **Try the application here:**
@@ -40,6 +50,9 @@ A publication-grade IEEE two-column research paper detailing the theoretical fou
 
 - **Title:** *Late Delivery Risk Prediction in Global Supply Chain Operations Using Machine Learning: An End-to-End Predictive Decision-Support Framework*
 - **Author:** Utkarsh Sengar
+- **GitHub:** [https://github.com/Utkarsh-sengar3](https://github.com/Utkarsh-sengar3)
+- **Project:** [https://github.com/Utkarsh-sengar3/late_delivery_risk_prediction](https://github.com/Utkarsh-sengar3/late_delivery_risk_prediction)
+- **Email:** [utkarshsengar3@gmail.com](mailto:utkarshsengar3@gmail.com)
 - **Format:** IEEE Two-Column Conference / Journal Format (11 Pages, 20 Figures & Screenshots, 7 Comparative Tables, 25 Authentic Citations)
 - **Status:** Complete & Publication-Ready
 
@@ -229,4 +242,13 @@ The application is deployed on **Streamlit Community Cloud**:
 - URL: **https://ldr-utkarsh-sengar.streamlit.app/**
 - Production branch: `main`
 - Configuration: Streamlit automatically installs dependencies from `requirements.txt`.
+
+---
+
+## 👤 Author & Contact
+
+**Utkarsh Sengar**  
+- **GitHub:** [https://github.com/Utkarsh-sengar3](https://github.com/Utkarsh-sengar3)  
+- **Project Repository:** [https://github.com/Utkarsh-sengar3/late_delivery_risk_prediction](https://github.com/Utkarsh-sengar3/late_delivery_risk_prediction)  
+- **Email:** [utkarshsengar3@gmail.com](mailto:utkarshsengar3@gmail.com)
 

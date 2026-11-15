@@ -2,6 +2,9 @@
 
 **Full Title:** Late Delivery Risk Prediction in Global Supply Chain Operations Using Machine Learning: An End-to-End Predictive Decision-Support Framework  
 **Author:** Utkarsh Sengar  
+**GitHub:** [https://github.com/Utkarsh-sengar3](https://github.com/Utkarsh-sengar3)  
+**Project Repository:** [https://github.com/Utkarsh-sengar3/late_delivery_risk_prediction](https://github.com/Utkarsh-sengar3/late_delivery_risk_prediction)  
+**Email:** [utkarshsengar3@gmail.com](mailto:utkarshsengar3@gmail.com)  
 **Department:** Artificial Intelligence and Machine Learning Engineering  
 **Institution:** Lovely Professional University, Phagwara, Punjab, India  
 **Project:** DeliveryIQ  
